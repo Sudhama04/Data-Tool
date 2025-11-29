@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import pandas as pd
 import numpy as np
+from flask_cors import CORS
 from sklearn.cluster import KMeans, DBSCAN
 from sklearn.ensemble import IsolationForest
 from sklearn.linear_model import LinearRegression
@@ -9,7 +10,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 app = Flask(__name__)
-
+CORS(app)
 # Enable CORS manually
 @app.after_request
 def after_request(response):
@@ -409,7 +410,4 @@ def perform_apriori():
         return jsonify({'error': f'Apriori algorithm failed: {str(e)}'}), 500
 
 if __name__ == '__main__':
-    print(" Starting Data Science Dashboard Server...")
-    print(" Server will be available at: http://localhost:5000")
-    print(" Backend is ready to receive requests from frontend!")
-    app.run(debug=True, port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=False)
