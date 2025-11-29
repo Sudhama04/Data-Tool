@@ -1,5 +1,5 @@
 // Configuration
-const API_BASE = 'http://localhost:5000';
+const API_BASE = 'https://data-tool-backend.onrender.com';
 let currentDataset = null;
 let currentChart = null;
 
@@ -1210,4 +1210,5 @@ function updateUIAfterUpload() {
     `;
     successMsg.innerHTML = '<i class="fas fa-check"></i> Dataset loaded successfully! Click any module to start analysis.';
     uploadBox.appendChild(successMsg);
+
 }
