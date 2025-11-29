@@ -1,5 +1,5 @@
 // Configuration
-const API_BASE = 'https://data-tool-backend.onrender.com';
+const API_BASE = 'https://data-tool-dd6e.onrender.com';
 let currentDataset = null;
 let currentChart = null;
 
@@ -1212,3 +1212,4 @@ function updateUIAfterUpload() {
     uploadBox.appendChild(successMsg);
 
 }
+
